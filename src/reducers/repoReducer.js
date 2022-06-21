@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 import { CREATE_REPO, DELETE_REPO } from '../actions/types';
 
-const repoReducer = (state = null, action) => {
+const repoReducer = (state = {}, action) => {
   switch (action.type) {
     case CREATE_REPO:
       return { ...state, [action.payload.id]: action.payload };

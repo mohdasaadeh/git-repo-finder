@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { createRepo } from '../actions';
 
-const Dropdown = ({ result }) => {
+const Dropdown = ({ result, createRepo }) => {
   const handleClick = () => {
     createRepo(result);
   };
@@ -17,7 +17,8 @@ const Dropdown = ({ result }) => {
 };
 
 Dropdown.propTypes = {
-  result: PropTypes.object.isRequired
+  result: PropTypes.object.isRequired,
+  createRepo: PropTypes.func.isRequired
 };
 
 export default connect(null, { createRepo })(Dropdown);
