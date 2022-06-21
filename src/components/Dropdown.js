@@ -14,7 +14,7 @@ const Dropdown = ({ result }) => {
 };
 
 Dropdown.propTypes = {
-  result: PropTypes.any.isRequired
+  result: PropTypes.object.isRequired
 };
 
 export default Dropdown;

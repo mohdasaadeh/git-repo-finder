@@ -4,7 +4,7 @@ import axios from 'axios';
 import Dropdown from './Dropdown';
 
 const Search = () => {
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState({});
 
   const inputRef = useRef();
 
