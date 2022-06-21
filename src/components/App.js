@@ -1,7 +1,13 @@
 import React from 'react';
 
+import Search from './Search';
+
 function App() {
-  return <h1>Git Repo Finder</h1>;
+  return (
+    <div>
+      <Search />
+    </div>
+  );
 }
 
 export default App;
