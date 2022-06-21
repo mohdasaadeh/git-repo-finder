@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { createRepo } from '../actions';
 
 const Dropdown = ({ result }) => {
   const handleClick = () => {
-    console.log(result);
+    createRepo(result);
   };
 
   return (
@@ -17,4 +20,4 @@ Dropdown.propTypes = {
   result: PropTypes.object.isRequired
 };
 
-export default Dropdown;
+export default connect(null, { createRepo })(Dropdown);
