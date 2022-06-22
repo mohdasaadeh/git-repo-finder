@@ -7,6 +7,7 @@ import '../css/styles.css';
 const RepoCard = ({ repo }) => {
   const {
     id,
+    html_url,
     full_name,
     owner,
     stargazers_count,
@@ -30,7 +31,9 @@ const RepoCard = ({ repo }) => {
     <div className="card">
       <div className="card-item">
         <div>
-          <span>{full_name}</span>
+          <a href={html_url}>
+            <span>{full_name}</span>
+          </a>
         </div>
         <img src={owner.avatar_url} />
       </div>
