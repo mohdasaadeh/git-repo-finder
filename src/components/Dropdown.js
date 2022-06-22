@@ -31,9 +31,11 @@ const Dropdown = ({ result, createRepo }) => {
   const handleSelection = event => {
     event.preventDefault();
 
-    document.querySelector('.dropdown').classList.remove('active-block');
+    if (!result['error']) {
+      document.querySelector('.dropdown').classList.remove('active-block');
 
-    if (!result['error']) createRepo(result);
+      createRepo(result);
+    }
   };
 
   const handleClose = event => {
