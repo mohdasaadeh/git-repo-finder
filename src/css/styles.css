@@ -24,7 +24,7 @@ body {
 }
 
 .search-container {
-  width: 500px;
+  width: 520px;
   margin: 0 auto;
   position: relative;
 }
@@ -43,7 +43,7 @@ body {
   margin-left: 10px;
 }
 .search-container .dropdown {
-  width: 405px;
+  width: 406px;
   position: absolute;
   top: 38px;
   left: 2px;
@@ -167,7 +167,7 @@ body {
   }
 
   .search-container {
-    width: 300px;
+    width: 320px;
   }
   .search-container .search-box input {
     font-size: 16px;
@@ -176,7 +176,7 @@ body {
     font-size: 16px;
   }
   .search-container .dropdown {
-    width: 220px;
+    width: 221px;
   }
 
   .modal-box {
