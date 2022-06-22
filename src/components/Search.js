@@ -1,13 +1,19 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
 
-import Dropdown from './Dropdown';
 import '../css/styles.css';
+import Dropdown from './Dropdown';
+import useComponentDismiss from '../hooks/useComponentDismiss';
 
 const Search = () => {
   const [result, setResult] = useState({});
 
   const inputRef = useRef();
+  const dropdownRef = useRef();
+
+  useComponentDismiss(dropdownRef, () =>
+    document.querySelector('.dropdown').classList.remove('active-block')
+  );
 
   const handleSearch = async () => {
     try {
@@ -25,7 +31,7 @@ const Search = () => {
   };
 
   return (
-    <div className="search-container">
+    <div className="search-container" ref={dropdownRef}>
       <div className="search-box">
         <input type="text" ref={inputRef} />
         <button onClick={handleSearch}>Search</button>

@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import '../css/styles.css';
 import { deleteRepo } from '../actions';
+import useComponentDismiss from '../hooks/useComponentDismiss';
 
 const DeleteModal = ({ deleteRepo }) => {
+  const modalRef = useRef();
+
   const { id } = useParams();
 
   const navigate = useNavigate();
+
+  useComponentDismiss(modalRef, () => navigate('/'));
 
   const handleCancel = () => {
     navigate('/');
@@ -23,7 +28,7 @@ const DeleteModal = ({ deleteRepo }) => {
 
   return (
     <div className="modal">
-      <div className="modal-box">
+      <div className="modal-box" ref={modalRef}>
         <p className="modal-message">
           Are you sure that you want to delete this repo?
         </p>
