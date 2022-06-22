@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import '../css/styles.css';
 import { deleteRepo } from '../actions';
 import useComponentDismiss from '../hooks/useComponentDismiss';
+import StyledDeleteModal from './DeleteModal.styles';
 
 const DeleteModal = ({ deleteRepo }) => {
   const modalRef = useRef();
@@ -27,21 +28,11 @@ const DeleteModal = ({ deleteRepo }) => {
   };
 
   return (
-    <div className="modal">
-      <div className="modal-box" ref={modalRef}>
-        <p className="modal-message">
-          Are you sure that you want to delete this repo?
-        </p>
-        <div className="modal-action">
-          <button className="modal-btn" onClick={handleDelete}>
-            Delete
-          </button>
-          <button className="modal-btn" onClick={handleCancel}>
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
+    <StyledDeleteModal
+      modalRef={modalRef}
+      handleCancel={handleCancel}
+      handleDelete={handleDelete}
+    />
   );
 };
 
