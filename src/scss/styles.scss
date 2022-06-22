@@ -32,6 +32,7 @@ body {
     button {
       font-size: utils.$header-font;
       margin-left: 10px;
+      @extend %button;
     }
   }
 
