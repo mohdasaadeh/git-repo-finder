@@ -1,0 +1,90 @@
+body {
+  background-color: #edede9;
+}
+
+.search-container {
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.search-container .search-box {
+  display: flex;
+  justify-content: center;
+}
+.search-container .search-box input {
+  height: 30px;
+  width: 400px;
+  font-size: 22px;
+}
+.search-container .search-box button {
+  font-size: 22px;
+}
+.search-container .dropdown {
+  width: 98%;
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: #2b2d42;
+  font-size: 20px;
+}
+.search-container .dropdown a {
+  text-decoration: none;
+  color: white;
+}
+.search-container .dropdown a:hover {
+  color: black;
+}
+.search-container .dropdown-close-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.search-container .dropdown-close-btn .close-btn {
+  font-size: 20px;
+  font-weight: bold;
+}
+.search-container .dropdown-item {
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.card {
+  width: 300px;
+  margin: 5px 5px;
+  background-color: #e63946;
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 0 5px;
+}
+.card-item {
+  display: flex;
+  justify-content: space-between;
+}
+.card img {
+  width: 10%;
+}
+.card-btn {
+  margin: 3px auto;
+  font-size: 18px;
+}
+.card span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.card-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.inactive-dropdown {
+  display: none;
+}
+
+.active-dropdown {
+  display: block;
+}/*# sourceMappingURL=styles.css.map */

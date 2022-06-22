@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import axios from 'axios';
 
 import Dropdown from './Dropdown';
+import '../css/styles.css';
 
 const Search = () => {
   const [result, setResult] = useState({});
@@ -17,9 +18,11 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <input type="text" ref={inputRef} />
-      <button onClick={handleSearch}>Search</button>
+    <div className="search-container">
+      <div className="search-box">
+        <input type="text" ref={inputRef} />
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <Dropdown result={result} />
     </div>
   );

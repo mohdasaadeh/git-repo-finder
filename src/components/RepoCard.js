@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../css/styles.css';
+
 const RepoCard = ({ repo }) => {
   const {
     full_name,
@@ -14,20 +16,53 @@ const RepoCard = ({ repo }) => {
     license
   } = repo;
 
+  const dateConverter = timestamp => {
+    const date = new Date(timestamp);
+
+    return (
+      date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()
+    );
+  };
+
   return (
-    <div>
-      <div>
-        {full_name}
+    <div className="card">
+      <div className="card-item">
+        <div>
+          <span>{full_name}</span>
+        </div>
         <img src={owner.avatar_url} />
       </div>
-      <div>Stars: {stargazers_count}</div>
-      <div>Forks: {forks_count}</div>
-      <div>Open Issues: {open_issues_count}</div>
-      <div>Created At: {created_at}</div>
-      <div>Updated At: {updated_at}</div>
-      <div>Language: {language}</div>
-      <div>License: {license.spdx_id}</div>
-      <button>Delete</button>
+      <div>
+        <span>Stars: </span>
+        {stargazers_count}
+      </div>
+      <div>
+        <span>Forks: </span>
+        {forks_count}
+      </div>
+      <div>
+        <span>Open Issues: </span>
+        {open_issues_count}
+      </div>
+      <div>
+        <span>Created At: </span>
+        {dateConverter(created_at)}
+      </div>
+      <div>
+        <span>Updated At: </span>
+        {dateConverter(updated_at)}
+      </div>
+      <div>
+        <span>Language: </span>
+        {language}
+      </div>
+      <div>
+        <span>License: </span>
+        {license.spdx_id}
+      </div>
+      <div className="card-item">
+        <button className="card-btn">Delete</button>
+      </div>
     </div>
   );
 };

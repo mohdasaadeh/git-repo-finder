@@ -1,17 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { createRepo } from '../actions';
+import '../css/styles.css';
 
 const Dropdown = ({ result, createRepo }) => {
-  const handleClick = () => {
+  useEffect(() => {
+    if (JSON.stringify(result) !== JSON.stringify({})) {
+      document.querySelector('.dropdown').classList.add('active-dropdown');
+    }
+  }, [result]);
+
+  const handleSelection = event => {
+    event.preventDefault();
+
+    document.querySelector('.dropdown').classList.remove('active-dropdown');
+
     createRepo(result);
   };
 
+  const handleClose = event => {
+    event.preventDefault();
+
+    document.querySelector('.dropdown').classList.remove('active-dropdown');
+  };
+
   return (
-    <div>
-      <p onClick={handleClick}>{result.full_name}</p>
+    <div className="dropdown inactive-dropdown">
+      <div className="dropdown-close-btn">
+        <a href="#" className="close-btn" onClick={() => handleClose(event)}>
+          &times;
+        </a>
+      </div>
+      <a href="#" onClick={() => handleSelection(event)}>
+        <p className="dropdown-item">{result.full_name}</p>
+      </a>
     </div>
   );
 };
