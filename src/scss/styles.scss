@@ -1,3 +1,6 @@
+$primary-font: 18px;
+$header-font: 22px;
+
 body {
   background-color: #edede9;
 }
@@ -14,11 +17,11 @@ body {
     input {
       height: 30px;
       width: 400px;
-      font-size: 22px;
+      font-size: $header-font;
     }
 
     button {
-      font-size: 22px;
+      font-size: $header-font;
     }
   }
 
@@ -30,7 +33,7 @@ body {
     transform: translateX(-50%);
     z-index: 1;
     background-color: #2b2d42;
-    font-size: 20px;
+    font-size: $primary-font;
 
     a {
       text-decoration: none;
@@ -46,7 +49,7 @@ body {
       justify-content: flex-end;
 
       .close-btn {
-        font-size: 20px;
+        font-size: $primary-font;
         font-weight: bold;
       }
     }
@@ -65,12 +68,17 @@ body {
   background-color: #e63946;
   border: 1px solid;
   border-radius: 3px;
-  font-size: 18px;
+  font-size: $primary-font;
   padding: 0 5px;
 
   &-item {
     display: flex;
     justify-content: space-between;
+  }
+
+  &-action {
+    display: flex;
+    justify-content: center;
   }
 
   img {
@@ -83,7 +91,7 @@ body {
   }
 
   span {
-    font-size: 22px;
+    font-size: $header-font;
     font-weight: bold;
   }
 }
@@ -94,10 +102,49 @@ body {
   flex-wrap: wrap;
 }
 
-.inactive-dropdown {
+.inactive {
   display: none;
 }
 
-.active-dropdown {
+.active-block {
   display: block;
+}
+
+.modal {
+  background-color: #1d3557;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-box {
+    background-color: black;
+    position: absolute;
+    height: 25%;
+    width: 40%;
+  }
+
+  &-message {
+    color: white;
+    margin-top: 80px;
+    margin-left: 10px;
+    font-size: $header-font;
+  }
+
+  &-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  &-btn {
+    margin: 0 10px;
+    font-size: $primary-font;
+  }
 }

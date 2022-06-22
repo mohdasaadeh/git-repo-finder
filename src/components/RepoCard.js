@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import '../css/styles.css';
 
 const RepoCard = ({ repo }) => {
   const {
+    id,
     full_name,
     owner,
     stargazers_count,
@@ -60,8 +62,10 @@ const RepoCard = ({ repo }) => {
         <span>License: </span>
         {license.spdx_id}
       </div>
-      <div className="card-item">
-        <button className="card-btn">Delete</button>
+      <div className="card-action">
+        <Link to={`/${id}/delete`}>
+          <button className="card-btn">Delete</button>
+        </Link>
       </div>
     </div>
   );

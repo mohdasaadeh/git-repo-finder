@@ -5,12 +5,16 @@ import RepoCard from './RepoCard';
 
 const RepoList = ({ repos }) => {
   const renderRepos = () => {
-    return Object.values(repos).map(repo => (
+    const repoArray = Object.values(repos).map(repo => (
       <RepoCard key={repo.id} repo={repo} />
     ));
+
+    return repoArray.sort(
+      (a, b) => b.props.repo.addedAt - a.props.repo.addedAt
+    );
   };
 
-  return renderRepos();
+  return <div className="card-list">{renderRepos()}</div>;
 };
 
 RepoList.propTypes = {

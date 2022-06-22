@@ -8,14 +8,14 @@ import '../css/styles.css';
 const Dropdown = ({ result, createRepo }) => {
   useEffect(() => {
     if (JSON.stringify(result) !== JSON.stringify({})) {
-      document.querySelector('.dropdown').classList.add('active-dropdown');
+      document.querySelector('.dropdown').classList.add('active-block');
     }
   }, [result]);
 
   const handleSelection = event => {
     event.preventDefault();
 
-    document.querySelector('.dropdown').classList.remove('active-dropdown');
+    document.querySelector('.dropdown').classList.remove('active-block');
 
     createRepo(result);
   };
@@ -23,11 +23,11 @@ const Dropdown = ({ result, createRepo }) => {
   const handleClose = event => {
     event.preventDefault();
 
-    document.querySelector('.dropdown').classList.remove('active-dropdown');
+    document.querySelector('.dropdown').classList.remove('active-block');
   };
 
   return (
-    <div className="dropdown inactive-dropdown">
+    <div className="dropdown inactive">
       <div className="dropdown-close-btn">
         <a href="#" className="close-btn" onClick={() => handleClose(event)}>
           &times;
