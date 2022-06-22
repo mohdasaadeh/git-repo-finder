@@ -10,11 +10,18 @@ const Search = () => {
   const inputRef = useRef();
 
   const handleSearch = async () => {
-    const { data } = await axios.get(
-      `https://api.github.com/repos/${inputRef.current.value}`
-    );
+    try {
+      const { data } = await axios.get(
+        `https://api.github.com/repos/${inputRef.current.value}`
+      );
 
-    setResult(data);
+      setResult(data);
+    } catch (error) {
+      setResult({
+        error:
+          "The repo wasn't found, please make sure to enter the full name then try again!"
+      });
+    }
   };
 
   return (

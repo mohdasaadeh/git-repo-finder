@@ -33,21 +33,28 @@ body {
   text-decoration: none;
   color: white;
 }
-.search-container .dropdown a:hover {
-  color: black;
-}
 .search-container .dropdown-close-btn {
   display: flex;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 .search-container .dropdown-close-btn .close-btn {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 .search-container .dropdown-item {
-  width: 100%;
-  margin-bottom: 5px;
+  width: 95%;
   margin-top: 0;
+}
+.search-container .dropdown-item-p {
+  margin: 5px auto;
+  padding: 0 10px 0 10px;
+}
+.search-container .dropdown-item-result:hover {
+  color: black;
+}
+.search-container .dropdown-item-error:hover {
+  cursor: default;
 }
 
 .card {

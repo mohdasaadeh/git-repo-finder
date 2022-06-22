@@ -40,24 +40,33 @@ body {
       color: white;
     }
 
-    a:hover {
-      color: black;
-    }
-
     &-close-btn {
       display: flex;
       justify-content: flex-end;
+      margin-right: 10px;
 
       .close-btn {
-        font-size: $primary-font;
+        font-size: $header-font;
         font-weight: bold;
       }
     }
 
     &-item {
-      width: 100%;
-      margin-bottom: 5px;
+      width: 95%;
       margin-top: 0;
+
+      &-p {
+        margin: 5px auto;
+        padding: 0 10px 0 10px;
+      }
+
+      &-result:hover {
+        color: black;
+      }
+
+      &-error:hover {
+        cursor: default;
+      }
     }
   }
 }

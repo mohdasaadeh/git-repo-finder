@@ -9,6 +9,22 @@ const Dropdown = ({ result, createRepo }) => {
   useEffect(() => {
     if (JSON.stringify(result) !== JSON.stringify({})) {
       document.querySelector('.dropdown').classList.add('active-block');
+
+      if (result['error']) {
+        document
+          .querySelector('.dropdown-item')
+          .classList.remove('dropdown-item-result');
+        document
+          .querySelector('.dropdown-item')
+          .classList.add('dropdown-item-error');
+      } else {
+        document
+          .querySelector('.dropdown-item')
+          .classList.remove('dropdown-item-error');
+        document
+          .querySelector('.dropdown-item')
+          .classList.add('dropdown-item-result');
+      }
     }
   }, [result]);
 
@@ -17,7 +33,7 @@ const Dropdown = ({ result, createRepo }) => {
 
     document.querySelector('.dropdown').classList.remove('active-block');
 
-    createRepo(result);
+    if (!result['error']) createRepo(result);
   };
 
   const handleClose = event => {
@@ -29,12 +45,20 @@ const Dropdown = ({ result, createRepo }) => {
   return (
     <div className="dropdown inactive">
       <div className="dropdown-close-btn">
-        <a href="#" className="close-btn" onClick={() => handleClose(event)}>
+        <a
+          href="#"
+          className="close-btn dropdown-item-result"
+          onClick={() => handleClose(event)}
+        >
           &times;
         </a>
       </div>
-      <a href="#" onClick={() => handleSelection(event)}>
-        <p className="dropdown-item">{result.full_name}</p>
+      <a
+        href="#"
+        onClick={() => handleSelection(event)}
+        className="dropdown-item dropdown-item-result"
+      >
+        <p className="dropdown-item-p">{result.full_name || result.error}</p>
       </a>
     </div>
   );
