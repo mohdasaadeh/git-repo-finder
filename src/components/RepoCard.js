@@ -37,31 +37,31 @@ const RepoCard = ({ repo }) => {
         </div>
         <img src={owner.avatar_url} />
       </div>
-      <div>
+      <div className="card-item">
         <span>Stars: </span>
         {stargazers_count}
       </div>
-      <div>
+      <div className="card-item">
         <span>Forks: </span>
         {forks_count}
       </div>
-      <div>
+      <div className="card-item">
         <span>Open Issues: </span>
         {open_issues_count}
       </div>
-      <div>
+      <div className="card-item">
         <span>Created At: </span>
         {dateConverter(created_at)}
       </div>
-      <div>
+      <div className="card-item">
         <span>Updated At: </span>
         {dateConverter(updated_at)}
       </div>
-      <div>
+      <div className="card-item">
         <span>Language: </span>
         {language}
       </div>
-      <div>
+      <div className="card-item">
         <span>License: </span>
         {license.spdx_id}
       </div>

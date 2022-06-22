@@ -1,7 +1,7 @@
 @use 'utils';
 
 body {
-  background-color: #edede9;
+  background-color: #d5bdaf;
   font-family: 'Lucida Console', 'Courier New', monospace;
 }
 
@@ -26,24 +26,25 @@ body {
     input {
       height: 30px;
       width: 400px;
-      font-size: $header-font;
+      font-size: utils.$header-font;
     }
 
     button {
-      font-size: $header-font;
+      font-size: utils.$header-font;
       margin-left: 10px;
     }
   }
 
   .dropdown {
-    width: 97%;
+    width: 405px;
     position: absolute;
     top: 38px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 2px;
+    // left: 50%;
+    // transform: translateX(-50%);
     z-index: 1;
     background-color: #2b2d42;
-    font-size: $primary-font;
+    font-size: utils.$primary-font;
 
     a {
       text-decoration: none;
@@ -56,7 +57,7 @@ body {
       margin-right: 10px;
 
       .close-btn {
-        font-size: $header-font;
+        font-size: utils.$header-font;
         font-weight: bold;
       }
     }
@@ -83,14 +84,16 @@ body {
 
 .card {
   width: 300px;
-  margin: 5px 5px;
-  background-color: #e63946;
+  margin: 5px 10px;
+  background-color: #edede9;
   border-radius: 3px;
-  font-size: $primary-font;
+  font-size: utils.$primary-font;
+  color: black;
   padding: 0 5px;
   box-shadow: 5px 10px #888888;
 
   &-item {
+    margin: 5px auto;
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
@@ -108,7 +111,7 @@ body {
   }
 
   span {
-    font-size: $header-font;
+    font-size: utils.$header-font;
     font-weight: bold;
   }
 
@@ -128,7 +131,7 @@ body {
 }
 
 .modal {
-  background-color: #1d3557;
+  background-color: #edede9;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -153,7 +156,7 @@ body {
     color: white;
     margin-top: 80px;
     margin-left: 10px;
-    font-size: $header-font;
+    font-size: utils.$header-font;
   }
 
   &-action {
@@ -164,7 +167,7 @@ body {
 
   &-btn {
     margin: 0 10px;
-    font-size: $header-font;
+    font-size: utils.$header-font;
     @extend %button;
   }
 }
@@ -183,16 +186,16 @@ body {
 
     .search-box {
       input {
-        font-size: $primary-font;
+        font-size: utils.$primary-font;
       }
 
       button {
-        font-size: $primary-font;
+        font-size: utils.$primary-font;
       }
     }
 
     .dropdown {
-      width: 99%;
+      width: 220px;
     }
   }
 
