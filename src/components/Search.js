@@ -33,7 +33,7 @@ const Search = () => {
   return (
     <div className="search-container" ref={dropdownRef}>
       <div className="search-box">
-        <input type="text" ref={inputRef} />
+        <input placeholder="Search a Repository" type="text" ref={inputRef} />
         <button onClick={handleSearch}>Search</button>
       </div>
       <Dropdown result={result} />

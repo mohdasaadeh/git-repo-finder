@@ -1,5 +1,26 @@
+.modal-btn, .card-btn {
+  background-color: #1d3557;
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 7px 18px;
+}
+
 body {
   background-color: #edede9;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.inactive {
+  display: none;
+}
+
+.active-block {
+  display: block;
 }
 
 .search-container {
@@ -10,24 +31,26 @@ body {
 .search-container .search-box {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 .search-container .search-box input {
   height: 30px;
   width: 400px;
-  font-size: 22px;
+  font-size: 20px;
 }
 .search-container .search-box button {
-  font-size: 22px;
+  font-size: 20px;
+  margin-left: 10px;
 }
 .search-container .dropdown {
-  width: 98%;
+  width: 97%;
   position: absolute;
   top: 38px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   background-color: #2b2d42;
-  font-size: 18px;
+  font-size: 16px;
 }
 .search-container .dropdown a {
   text-decoration: none;
@@ -39,7 +62,7 @@ body {
   margin-right: 10px;
 }
 .search-container .dropdown-close-btn .close-btn {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 .search-container .dropdown-item {
@@ -61,43 +84,39 @@ body {
   width: 300px;
   margin: 5px 5px;
   background-color: #e63946;
-  border: 1px solid;
   border-radius: 3px;
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 5px;
+  box-shadow: 5px 10px #888888;
 }
 .card-item {
   display: flex;
   justify-content: space-between;
+  padding: 5px 0;
 }
 .card-action {
   display: flex;
   justify-content: center;
+  padding: 5px 0;
+}
+.card-btn {
+  margin: 3px auto;
+}
+.card span {
+  font-size: 20px;
+  font-weight: bold;
 }
 .card img {
   width: 10%;
 }
-.card-btn {
-  margin: 3px auto;
-  font-size: 18px;
-}
-.card span {
-  font-size: 22px;
-  font-weight: bold;
+.card a {
+  color: black;
 }
 
 .card-list {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-}
-
-.inactive {
-  display: none;
-}
-
-.active-block {
-  display: block;
 }
 
 .modal {
@@ -108,7 +127,7 @@ body {
   z-index: 2;
   top: 0;
   left: 0;
-  opacity: 0.8;
+  opacity: 0.9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,12 +137,14 @@ body {
   position: absolute;
   height: 25%;
   width: 40%;
+  box-shadow: 5px 10px #e5e5e5;
+  border-radius: 3px;
 }
 .modal-message {
   color: white;
   margin-top: 80px;
   margin-left: 10px;
-  font-size: 22px;
+  font-size: 20px;
 }
 .modal-action {
   display: flex;
@@ -132,5 +153,32 @@ body {
 }
 .modal-btn {
   margin: 0 10px;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+@media (max-width: 655px) {
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .search-container {
+    width: 300px;
+  }
+  .search-container .search-box input {
+    font-size: 16px;
+  }
+  .search-container .search-box button {
+    font-size: 16px;
+  }
+  .search-container .dropdown {
+    width: 99%;
+  }
+
+  .modal-box {
+    width: 80%;
+  }
 }/*# sourceMappingURL=styles.css.map */
